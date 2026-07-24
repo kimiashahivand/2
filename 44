@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+// تابع min برای 4 عدد صحیح
+int min(int a, int b, int c, int d) {
+    int m = a;
+    if (b < m) m = b;
+    if (c < m) m = c;
+    if (d < m) m = d;
+    return m;
+}
+
+int main() {
+    int w, x, y, z;
+    cout << "Enter 4 integers: ";
+    cin >> w >> x >> y >> z;
+
+    cout << "Minimum is: " << min(w, x, y, z) << endl;
+    return 0;
+}
