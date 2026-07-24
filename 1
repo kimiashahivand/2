@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double x, cos2x, rhs;
+    cout << "Enter x in radians: ";
+    cin >> x;
+
+    cos2x = cos(2 * x);
+    rhs = 2 * pow(cos(x), 2) - 1;
+
+    cout << "cos(2x) = " << cos2x << endl;
+    cout << "2cos^2(x) - 1 = " << rhs << endl;
+
+    if (fabs(cos2x - rhs) < 1e-9)
+        cout << "Identity is correct." << endl;
+    else
+        cout << "Identity is not correct." << endl;
+
+    return 0;
+}
