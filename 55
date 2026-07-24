@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int min(int a, int b) {
+    return (a < b) ? a : b;
+}
+
+int min(int a, int b, int c, int d) {
+    return min(min(a, b), min(c, d));
+}
+
+int main() {
+    int a, b, c, d;
+    cout << "Enter 4 integers: ";
+    cin >> a >> b >> c >> d;
+    cout << "Minimum is: " << min(a, b, c, d) << endl;
+    return 0;
+}
