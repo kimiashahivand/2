@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const double PI = 3.141592653589793;
+
+void computeCircle(float& a, float& c, float r) {
+    a = PI * r * r;
+    c = 2 * PI * r; 
+}
+
+int main() {
+    float radius, area, circumference;
+    cout << "Enter radius: ";
+    cin >> radius;
+    
+    computeCircle(area, circumference, radius);
+    
+    cout << "Area = " << area << endl;
+    cout << "Circumference = " << circumference << endl;
+    return 0;
+}
