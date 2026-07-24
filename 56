@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int isTriangular(int n) {
+    if (n < 0) return 0;
+    
+    // حل معادله: n = k(k+1)/2 => k^2 + k - 2n = 0
+    int discriminant = 1 + 8 * n;
+    int sqrtDisc = sqrt(discriminant);
+    
+    if (sqrtDisc * sqrtDisc == discriminant) {
+        int k = (-1 + sqrtDisc) / 2;
+        if (k * (k + 1) / 2 == n) {
+            return k;
+        }
+    }
+    return 0;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    
+    int result = isTriangular(num);
+    if (result != 0) {
+        cout << num << " is triangular (T_" << result << ")" << endl;
+    } else {
+        cout << num << " is NOT triangular" << endl;
+    }
+    return 0;
+}
