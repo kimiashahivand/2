@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void computeTriangle(float& area, float& perimeter, float a, float b, float c) {
+    perimeter = a + b + c;
+    
+    // فرمول هرون برای مساحت
+    float s = perimeter / 2;
+    area = sqrt(s * (s - a) * (s - b) * (s - c));
+}
+
+int main() {
+    float a, b, c, area, perimeter;
+    cout << "Enter three sides of triangle: ";
+    cin >> a >> b >> c;
+    
+  
+    if (a + b > c && a + c > b && b + c > a) {
+        computeTriangle(area, perimeter, a, b, c);
+        cout << "Area = " << area << endl;
+        cout << "Perimeter = " << perimeter << endl;
+    } else {
+        cout << "Invalid triangle sides!" << endl;
+    }
+    return 0;
+}
