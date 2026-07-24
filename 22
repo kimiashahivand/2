@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double x, lhs;
+    cout << "Enter x in radians: ";
+    cin >> x;
+
+    lhs = pow(cos(x), 2) + pow(sin(x), 2);
+
+    cout << "cos^2(x) + sin^2(x) = " << lhs << endl;
+
+    if (fabs(lhs - 1.0) < 1e-9)
+        cout << "Identity is correct." << endl;
+    else
+        cout << "Identity is not correct." << endl;
+
+    return 0;
+}
