@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// تابع فاکتوریل
+long long fact(int n) {
+    long long result = 1;
+    for (int i = 2; i <= n; i++)
+        result *= i;
+    return result;
+}
+
+// تابع جایگشت P(n,k) = n! / (n-k)!
+long long P(int n, int k) {
+    if (k > n) return 0;
+    long long result = 1;
+    for (int i = n; i > n - k; i--)
+        result *= i;
+    return result;
+}
+
+int main() {
+    int n, k;
+    cout << "Enter n and k: ";
+    cin >> n >> k;
+    cout << "P(" << n << "," << k << ") = " << P(n, k) << endl;
+    cout << "Factorial of " << n << " = " << fact(n) << endl;
+    return 0;
+}
