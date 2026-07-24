@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double b, n;
+    cout << "Enter base (b) and exponent (n): ";
+    cin >> b >> n;
+
+    double left = pow(b, n);
+    double right = exp(n * log(b));
+
+    cout << "b^n = " << left << endl;
+    cout << "e^(n log b) = " << right << endl;
+
+    if (fabs(left - right) < 1e-9)
+        cout << "Equality holds." << endl;
+    else
+        cout << "Equality does not hold." << endl;
+
+    return 0;
+}
